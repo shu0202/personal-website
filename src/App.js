@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import image1 from './images/banner_meteror.png';
+import image2 from './images/banner_chihang.png';
+
 function App() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [image1, image2];
+
+  const handlePrevClick = () => {
+    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex((currentIndex + 1) % images.length);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="banner">
+        <div
+          className="banner-image"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            transition: 'transform 0.5s ease-in-out',
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          {images.map((image, index) => (
+            <img key={index} src={image} alt={`Banner ${index}`} />
+          ))}
+        </div>
+        <div className="buttons">
+          <button onClick={handlePrevClick}>Prev</button>
+          <button onClick={handleNextClick}>Next</button>
+        </div>
+      </div>
+      {/* Add the rest of your website content here */}
     </div>
   );
 }
