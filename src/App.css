@@ -123,3 +123,75 @@
   background-color: currentColor;
   margin-top: 5px;
 }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Replace the solid background color with a gradient */
+  background: linear-gradient(180deg, #333, #b5b5b500);
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-logo {
+  flex-basis: 10%;
+}
+
+.logo-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.logo-button img {
+  max-width: 100px;
+  height: auto;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.nav-button_h {
+  background-color: transparent;
+  font-family: 'Helvetica', sans-serif;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+  margin-right: 1rem;
+}
+
+.nav-button_h:hover {
+  color: #a8a8a8;
+}
+
+.nav-button_h:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 25px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #a8a8a8;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-button_h:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
+}

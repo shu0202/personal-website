@@ -7,6 +7,7 @@ import image3 from './images/banner_epiphany.png';
 import title1 from './images/title_meteror.png';
 import title2 from './images/title_chihang.png';
 import title3 from './images/title_epiphany.png';
+import logo from './images/logo.png';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -78,6 +79,19 @@ function App() {
 
   return (
     <div className="App">
+      <header className="header">
+        <div className="header-logo">
+          <button className="logo-button">
+            <img src={logo} alt="Logo" />
+          </button>
+        </div>
+        <nav className="header-nav">
+          <button className="nav-button_h">About</button>
+          <button className="nav-button_h">Educations and Experience</button>
+          <button className="nav-button_h">Projects</button>
+          <button className="nav-button_h">Skills</button>
+        </nav>
+      </header>
       <div
         className="banner"
         onMouseMove={handleMouseMove}
