@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'PPTelegrafRegular';
+  src: url('./fonts/PPTelegraf-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Replace the solid background color with a gradient */
+    background: transparent;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  .header-logo {
+    top: 0;
+    flex-basis: 10%;
+    margin-top: 0px;
+  }
+  
+  .logo-button {
+    top: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative; /* Ensure this is relative for absolute children */
+    margin-top: -50px;
+  }
+  
+  .logo-button img {
+    top: 0;
+    max-width: 100px;
+    height: auto;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for fading */
+  
+  }
+  
+  .logo-button img.normal-logo {
+    top: 0;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for fading */
+  }
+  
+  .logo-button img.hover-logo {
+    top: 0;
+    position: absolute; /* Ensure the hover logo is in the same spot */
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start with hidden hover logo */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for fading */
+  }
+  
+  .logo-button:hover img.normal-logo {
+    opacity: 0; /* Fade out the normal logo on hover */
+  }
+  
+  .logo-button:hover img.hover-logo {
+    opacity: 1; /* Fade in the hover logo on hover */
+  }
+  
+  .header-nav {
+    top: 80%;
+    left: 20%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+  
+  .nav-button_h {
+    background-color: transparent;
+    font-family: 'PPTelegrafRegular', sans-serif;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    margin-right: 1rem;
+  }
+  
+  .nav-button_h:hover {
+    color: #a8a8a8;
+  }
+  
+  .nav-button_h:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #a8a8a8;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-button_h:hover:after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  
+  .header-gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 220%; /* Fills the entire header area */
+    z-index: -1; /* Place behind the header content */
+    background: linear-gradient(180deg, #333, #b5b5b500); /* Repeat the gradient definition */
+  }
+
+  .home-button-container {
+    position: absolute;
+    top: 150%; /* Adjust the top value to move the button down */
+    left: 10%;
+  }
+  
+  .home-button {
+    background-color: transparent;
+    font-family: 'PPTelegrafRegular', sans-serif;
+    color: #fff;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
