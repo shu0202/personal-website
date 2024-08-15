@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'PPTelegrafRegular';
-  src: url('./fonts/PPTelegraf-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .banner {
   position: relative;
   overflow: hidden;
@@ -33,6 +26,8 @@
   display: flex;
   width: 100%;
   padding: 0 20px;
+  /* Added z-index to ensure buttons are above other elements if necessary */
+  z-index: 10;
 }
 
 .buttons button {
@@ -134,4 +129,13 @@
   height: 2px;
   background-color: currentColor;
   margin-top: 1px;
+}
+
+.arrow-right {
+  margin-right: 0;
+  color: #c8c8c8;
+}
+
+.arrow-left {
+  rotate: 180deg;
 }

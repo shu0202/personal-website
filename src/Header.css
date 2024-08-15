@@ -21,13 +21,12 @@
   }
   
   .header-logo {
-    top: 0;
     flex-basis: 10%;
-    margin-top: 0px;
   }
   
   .logo-button {
     top: 0;
+    left: 20%;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -69,15 +68,15 @@
     opacity: 1; /* Fade in the hover logo on hover */
   }
   
-  .header-nav {
+  .header-nav-h {
     top: 80%;
-    left: 20%;
+    left: 30%;
     position: absolute;
     display: flex;
     justify-content: flex-start;
     flex-grow: 1;
   }
-  
+
   .nav-button_h {
     background-color: transparent;
     font-family: 'PPTelegrafRegular', sans-serif;
@@ -138,4 +137,51 @@
     font-size: 13px;
     cursor: pointer;
     margin-right: 1rem;
+  }
+
+  .header-nav-v {
+    top: 400%;
+    left: 2%;
+    position: absolute;
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: flex-start; /* Align items to the start of the container */
+    gap: 50px; /* Adjust spacing between items if needed */
+  }
+  
+
+  .nav-button_v {
+    background-color: transparent;
+    font-family: 'PPTelegrafRegular', sans-serif;
+    color: rgb(1, 0, 82);
+    border: none;
+    padding: 0.5rem 0.5rem;
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    margin-right: 1rem;
+  }
+  
+  .nav-button_v:hover {
+    color: rgb(49, 49, 83);
+  }
+  
+  .nav-button_v:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(49, 49, 83);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-button_v:hover:after {
+    visibility: visible;
+    transform: scaleX(1);
   }

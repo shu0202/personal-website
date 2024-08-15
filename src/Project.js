@@ -114,7 +114,16 @@ const Project = () => {
               onClick={handlePrevClick}
               style={{ transition: 'background-color 0.3s ease-in-out' }}
             >
-              Prev
+              <svg
+                className="arrow-left"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                style={{ fill: 'rgb(255, 255, 255)'}}
+              >
+                <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+              </svg>
             </button>
           )}
           {gradientSide === 'right' && (
@@ -123,7 +132,16 @@ const Project = () => {
               onClick={handleNextClick}
               style={{ transition: 'background-color 0.3s ease-in-out' }}
             >
-              Next
+              <svg
+                className="arrow-right"
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                viewBox="0 0 24 24"
+                style={{ fill: 'rgb(255, 255, 255)'}}
+              >
+                <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+              </svg>
             </button>
           )}
         </div>
@@ -147,8 +165,6 @@ const Project = () => {
         ))}
       </div>
       </MotionAnimate>
-
-      {/* Add the rest of your website content here */}
     </div>
   );
 };
