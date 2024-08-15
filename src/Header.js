@@ -52,7 +52,7 @@ const Header = () => {
           <button className="nav-button_v">ABOUT</button>
           <button className="nav-button_v">EXPERIENCE</button>
           <button className="nav-button_v" onClick={handleProjectButtonClick}>PROJECTS</button>
-          <button className="nav-button_v">Contact</button>
+          <button className="nav-button_v">CONTACT</button>
         </nav>
       )}
       
@@ -61,7 +61,7 @@ const Header = () => {
           <button className="nav-button_h">ABOUT</button>
           <button className="nav-button_h">EXPERIENCE</button>
           <button className="nav-button_h" onClick={handleProjectButtonClick}>PROJECTS</button>
-          <button className="nav-button_h">Contact</button>
+          <button className="nav-button_h">CONTACT</button>
         </nav>
       )}
     </header>

@@ -120,7 +120,30 @@ function Home() {
         <p className='section-name'>PERSONAL PROJECTS: </p>
         <p className='section-name'>PERSONAL PROJECTS: </p>
       */}
-      
+        <div className='about-container'> 
+          <p className='section-name'>About me</p> 
+          <p className='about-content'>
+            I am an <strong>economics and finance</strong> graduate 
+            from the University of Hong Kong working towards 
+            a master of <strong>computer science</strong> degree at the University of Bath,
+            that has a passionate in <strong>software development</strong>.
+          </p> 
+          <button className='about-button'>
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <p className='about-button-text'>more</p>
+              <svg
+                className="arrow-right"
+                xmlns="http://www.w3.org/2000/svg"
+                width="30%"
+                height="30%"
+                viewBox="0 0 24 24"
+                style={{ fill: 'rgb(1, 0, 82)' }}
+              >
+                <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+              </svg>
+            </span>
+          </button>
+        </div>
       </div>
     );
   }
