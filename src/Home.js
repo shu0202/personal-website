@@ -6,9 +6,9 @@ import Header from './Header';
 import { MotionAnimate } from 'react-motion-animate'
 
 
-import image1 from './images/meteror.png';
-import image2 from './images/chihang.png';
-import image3 from './images/epiphany.png';
+import image1 from './images/cg_meteror.jpeg';
+import image2 from './images/cg_chihang.png';
+import image3 from './images/cg_bloom.png';
 
 function Home() {
     const navigate = useNavigate();
@@ -69,11 +69,6 @@ function Home() {
         title: 'chihang',
         imageUrl: image2
       },
-      {
-        id: 3,
-        title: 'epiphany',
-        imageUrl: image3
-      }
     ];
 
     return (
@@ -109,32 +104,8 @@ function Home() {
               <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
             </svg>
         </div>
-        {/* 
-        <MotionAnimate animation='scrollFadeIn'>
-        <div className='projects-container'>
-          <p className='section-name'>PERSONAL PROJECTS: </p>
-          <div className="image-carousel">
-            <img
-              src={personalProjects[currentProjectIndex].imageUrl}
-              alt={personalProjects[currentProjectIndex].title}
-              style={{
-                opacity: fadeEffect ? 0 : 1,
-                transition: 'opacity 0.5s ease-in-out'
-              }}
-            />
-          </div>
-        </div>
-        <button className='project-button' onClick={handleProjectButtonClick}>Go to</button>
-        </MotionAnimate>
-        <p className='section-name'>PERSONAL PROJECTS: </p>
-        <p className='section-name'>PERSONAL PROJECTS: </p>
-        <p className='section-name'>PERSONAL PROJECTS: </p>
-        <p className='section-name'>PERSONAL PROJECTS: </p>
-        <p className='section-name'>PERSONAL PROJECTS: </p>
-        <p className='section-name'>PERSONAL PROJECTS: </p>
-      */}
         {/*About Block*/}
-          <div className='about-container'>
+          <div className='section-container'>
             <MotionAnimate animation='scrollPosition' xPos={[-1000, 0]} scrollPositions={[0.1, 0.5]}>
               <p className='section-name'>About me</p> 
             </MotionAnimate>
@@ -176,8 +147,7 @@ function Home() {
           </div>
 
         {/*Project Block*/}
-        <MotionAnimate animation='scrollOpacity'>
-          <div className='experience-container'> 
+          <div className='section-container'> 
             <MotionAnimate animation='scrollPosition' xPos={[-1000, 0]} scrollPositions={[0.1, 0.5]}>
               <p className='section-name'>Projects</p> 
             </MotionAnimate>
@@ -214,12 +184,36 @@ function Home() {
                 </span>
               </button>
             </MotionAnimate>
+            <p className='sub-section-name'>
+              Skills:
+            </p>
+            <div className="skills-images-container">
+              <p className='sub-content'>
+                <ul className='skill-list'>
+                  <li>Python</li>
+                  <li>C/C++</li>
+                  <li>Java</li>
+                  <li>JavaScript (React/React-native)</li>
+                  <li>Bash/Shell Scripting</li>
+                  <li>SQL</li>
+                  <li>R</li>
+                  <li>Qt</li>
+                  <li>Ren'Py</li>
+                  <li>ASP</li>
+                  <li>Haskell</li>
+                  <li>Firebase</li>
+                </ul>
+              </p>
+              <div className="skills-images">
+                <img src={image1} alt="Skill related image 1" className="skill-image1" />
+                <img src={image2} alt="Skill related image 2" className="skill-image2" />
+                <img src={image3} alt="Skill related image 3" className="skill-image3" />
+              </div>
+            </div>
           </div>
-        </MotionAnimate>
 
         {/*Experiece Block*/}
-        <MotionAnimate animation='scrollOpacity'>
-          <div className='experience-container'> 
+          <div className='section-container'> 
             <p className='section-name'>Experience</p> 
             <p className='about-content'>
               Studied economics from <strong>the University of Hong Kong</strong>.
@@ -247,7 +241,6 @@ function Home() {
               </span>
             </button>
           </div>
-        </MotionAnimate>
       </div>
     );
   }

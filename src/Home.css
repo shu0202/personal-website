@@ -36,6 +36,30 @@
   }
 }
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(90deg);
+  }
+  40% {
+    transform: translateY(-5px) rotate(90deg);
+  }
+  60% {
+    transform: translateY(-3px) rotate(90deg);
+  }
+}
+
+@keyframes bounce-right {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+}
+
 .home-screen {
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scroll */
@@ -117,18 +141,6 @@
   animation: bounce 2s infinite; /* Optional: Add a bounce animation */
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0) rotate(90deg);
-  }
-  40% {
-    transform: translateY(-5px) rotate(90deg);
-  }
-  60% {
-    transform: translateY(-3px) rotate(90deg);
-  }
-}
-
 .section-name {
   font-family: 'PPTelegrafBold', sans-serif;
   font-size: 400%;
@@ -145,15 +157,24 @@
   color: rgb(1, 0, 82);
 }
 
-.about-container {
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 0;
-  margin-bottom: 20%;
-}
-
 .about-content strong {
   color: rgb(255, 145, 0); /* Replace with your desired RGB color */
+}
+
+.sub-section-name {
+  font-family: 'PPTelegrafBold', sans-serif;
+  font-size: 200%;
+  width: 20%;
+  margin-left: 0;
+  white-space: nowrap; /* Ensure text stays on one line */
+  color: rgb(1, 0, 82);
+  margin-bottom: 0;
+}
+
+.sub-content {
+  font-family: 'PPTelegrafRegular', sans-serif;
+  font-size: 170%;
+  color: rgb(1, 0, 82);
 }
 
 .more-button {
@@ -177,9 +198,15 @@
   color: rgb(107, 107, 107); /* Change to the desired color on hover */
 }
 
-.more-button:hover .arrow-right {
-  fill: rgb(107, 107, 107);  /* Change SVG fill color on hover */
-  transition: fill 0.3s ease; /* Smooth transition for the SVG color */
+.arrow-right {
+  animation: bounce-right 2s infinite;
+}
+
+.section-container {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 0;
+  margin-bottom: 20%;
 }
 
 
@@ -188,4 +215,44 @@
   margin-left: 20%;
   margin-top: 0;
   margin-bottom: 20%;
+}
+
+.skills-images {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.skill-image1 {
+  margin-top: 13%;
+  width: 140%; /* Make sure images are responsive */
+  height: auto;
+  margin-left: 20%;
+  margin-bottom:0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.skill-image2 {
+  width: 140%; /* Make sure images are responsive */
+  height: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.skill-image3 {
+  width: 100%; /* Make sure images are responsive */
+  max-width: 300px; /* Control the max width of the images */
+  height: auto;
+  margin-bottom: 20px; /* Space between images */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.skills-images-container {
+  display: flex;
+  justify-content: space-between; /* Space between the list and images */
+
+}
+
+.skill-list {
+  flex: 1;
+  margin-right: 40px; /* Increased space between the list and the images */
 }
