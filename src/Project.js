@@ -7,9 +7,11 @@ import { MotionAnimate } from 'react-motion-animate'
 import image1 from './images/banner_meteror.png';
 import image2 from './images/banner_chihang.png';
 import image3 from './images/banner_epiphany.png';
+import image4 from './images/banner_bloom.png';
 import title1 from './images/title_meteror.png';
 import title2 from './images/title_chihang.png';
 import title3 from './images/title_epiphany.png';
+import title4 from './images/title_bloom.png';
 
 const Project = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,8 +21,8 @@ const Project = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [hasTitleBeenVisible, setHasTitleBeenVisible] = useState([false, false, false]);
 
-  const images = [image1, image2, image3];
-  const titles = [title1, title2, title3];
+  const images = [image1, image2, image3, image4];
+  const titles = [title1, title2, title3, title4];
 
 
   const handleScroll = () => {

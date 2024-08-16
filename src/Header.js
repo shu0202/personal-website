@@ -18,6 +18,11 @@ const Header = () => {
   };
 
   const handleScroll = () => {
+    if (location.pathname === '/') {
+      setOpacity(1);
+      return;
+    }
+
     const scrolled = window.scrollY;
     const maxScroll = 200; // Adjust this value as needed
 

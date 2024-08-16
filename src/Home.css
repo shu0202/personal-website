@@ -38,6 +38,8 @@
 
 .home-screen {
   width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  box-sizing: border-box;
 }
 
 .projects-container {
@@ -147,9 +149,14 @@
   width: 60%;
   margin-left: 20%;
   margin-top: 0;
+  margin-bottom: 20%;
 }
 
-.about-button {
+.about-content strong {
+  color: rgb(255, 145, 0); /* Replace with your desired RGB color */
+}
+
+.more-button {
   flex-direction: row;
   background-color: transparent;
   border: 0;
@@ -157,10 +164,28 @@
   font-size: 200%;
   margin-left: 80%;
   color: rgb(1, 0, 82);
+  transition: color 0.3s ease; /* Smooth transition for the text color */
 }
 
-.about-button-text {
+.more-button-text {
   margin-bottom: 14%;
   margin-top: 0;
   margin-right: 10%;
+}
+
+.more-button:hover {
+  color: rgb(107, 107, 107); /* Change to the desired color on hover */
+}
+
+.more-button:hover .arrow-right {
+  fill: rgb(107, 107, 107);  /* Change SVG fill color on hover */
+  transition: fill 0.3s ease; /* Smooth transition for the SVG color */
+}
+
+
+.experience-container {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 0;
+  margin-bottom: 20%;
 }

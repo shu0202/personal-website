@@ -15,6 +15,16 @@ function Home() {
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
     const [fadeEffect, setFadeEffect] = useState(false);
     const [opacity, setScrollOpacity] = useState(1);
+    const [isHovered, setIsHovered] = useState(false);
+
+    // Event handlers for mouse enter and leave
+    const handleMouseEnter = () => {
+      setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -91,7 +101,10 @@ function Home() {
               width="50"
               height="50"
               viewBox="0 0 24 24"
-              style={{ fill: 'rgb(1, 0, 82)', marginTop: '5px' }}
+              style={{
+                fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
+                transition: 'fill 0.3s ease',
+              }}
             >
               <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
             </svg>
@@ -120,30 +133,121 @@ function Home() {
         <p className='section-name'>PERSONAL PROJECTS: </p>
         <p className='section-name'>PERSONAL PROJECTS: </p>
       */}
-        <div className='about-container'> 
-          <p className='section-name'>About me</p> 
-          <p className='about-content'>
-            I am an <strong>economics and finance</strong> graduate 
-            from the University of Hong Kong working towards 
-            a master of <strong>computer science</strong> degree at the University of Bath,
-            that has a passionate in <strong>software development</strong>.
-          </p> 
-          <button className='about-button'>
-            <span style={{ display: 'flex', alignItems: 'center' }}>
-              <p className='about-button-text'>more</p>
-              <svg
-                className="arrow-right"
-                xmlns="http://www.w3.org/2000/svg"
-                width="30%"
-                height="30%"
-                viewBox="0 0 24 24"
-                style={{ fill: 'rgb(1, 0, 82)' }}
+        {/*About Block*/}
+          <div className='about-container'>
+            <MotionAnimate animation='scrollPosition' xPos={[-1000, 0]} scrollPositions={[0.1, 0.5]}>
+              <p className='section-name'>About me</p> 
+            </MotionAnimate>
+            <MotionAnimate
+              animation='fadeInUp'
+              reset={true}
+              distance={50}
+              delay={0.5}
+              speed={0.7}>
+              <p className='about-content'>
+                I am a <strong>MSc Computer Science</strong> graduate from the University of Bath 
+                and an <strong>Economics and Finance</strong> graduate from the University of Hong Kong,
+                that have a passion in <strong>software development and IT</strong>.
+              </p>
+            </MotionAnimate> 
+            <MotionAnimate animation='scrollPosition' xPos={[0, 500]} scrollPositions={[0.3, 0]}>
+              <button className='more-button'
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
-              </svg>
-            </span>
-          </button>
-        </div>
+                <span style={{ display: 'flex', alignItems: 'center' }}>
+                  <p className='more-button-text'>more</p>
+                  <svg
+                    className="arrow-right"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30%"
+                    height="30%"
+                    viewBox="0 0 24 24"
+                    style={{
+                      fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
+                      transition: 'fill 0.3s ease',
+                    }}
+                  >
+                    <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+                  </svg>
+                </span>
+              </button>
+            </MotionAnimate>
+          </div>
+
+        {/*Project Block*/}
+        <MotionAnimate animation='scrollOpacity'>
+          <div className='experience-container'> 
+            <MotionAnimate animation='scrollPosition' xPos={[-1000, 0]} scrollPositions={[0.1, 0.5]}>
+              <p className='section-name'>Projects</p> 
+            </MotionAnimate>
+            <MotionAnimate
+              animation='fadeInUp'
+              reset={true}
+              distance={50}
+              delay={0.5}
+              speed={0.7}>
+              <p className='about-content'>
+                Things that I am passionate about: <strong>software engineering</strong>, <strong>games</strong> and more.
+              </p> 
+            </MotionAnimate>
+            <MotionAnimate animation='scrollPosition' xPos={[0, 500]} scrollPositions={[0.3, 0]}>
+              <button className='more-button'
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <span style={{ display: 'flex', alignItems: 'center' }}>
+                  <p className='more-button-text' onClick={handleProjectButtonClick}>more</p>
+                  <svg
+                    className="arrow-right"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30%"
+                    height="30%"
+                    viewBox="0 0 24 24"
+                    style={{
+                      fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
+                      transition: 'fill 0.3s ease',
+                    }}
+                  >
+                    <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+                  </svg>
+                </span>
+              </button>
+            </MotionAnimate>
+          </div>
+        </MotionAnimate>
+
+        {/*Experiece Block*/}
+        <MotionAnimate animation='scrollOpacity'>
+          <div className='experience-container'> 
+            <p className='section-name'>Experience</p> 
+            <p className='about-content'>
+              Studied economics from <strong>the University of Hong Kong</strong>.
+              Master of computer science at the <strong>University of Bath</strong>.
+            </p> 
+            <button className='more-button'
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span style={{ display: 'flex', alignItems: 'center' }}>
+                <p className='more-button-text'>more</p>
+                <svg
+                  className="arrow-right"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30%"
+                  height="30%"
+                  viewBox="0 0 24 24"
+                  style={{
+                    fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
+                    transition: 'fill 0.3s ease',
+                  }}
+                >
+                  <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </MotionAnimate>
       </div>
     );
   }
