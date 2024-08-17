@@ -226,7 +226,7 @@
   width: 85%; /* Same width for both images */
   height: auto; /* Fixed height to maintain consistency */
   margin-bottom:0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Adds a subtle shadow */
 }
 
 .skill-image1 {
@@ -236,7 +236,7 @@
 .skill-image3 {
   width: 130%; /* Make sure images are responsive */
   height: auto;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
   margin-left: -5%;
 }
 

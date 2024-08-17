@@ -12,8 +12,9 @@ import image3 from './images/cg_meteror.png';
 
 function Home() {
     const navigate = useNavigate();
-    const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
-    const [fadeEffect, setFadeEffect] = useState(false);
+    const [scale1, setScale1] = useState(0.1); 
+    const [scale2, setScale2] = useState(0.1); 
+    const [scale3, setScale3] = useState(0.1);
     const [opacity, setScrollOpacity] = useState(1);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -26,30 +27,37 @@ function Home() {
       setIsHovered(false);
     };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setFadeEffect(true);
-            setTimeout(() => {
-                setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % personalProjects.length);
-                setFadeEffect(false);
-            }, 1000);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, []);
-
     const handleProjectButtonClick = () => {
       navigate('/project');
     };
 
     const handleScroll = () => {
       const scrolled = window.scrollY;
+      const startScroll = 1000;
       const maxScroll = 200; // Adjust this value as needed
-  
+      const maxScroll_s1 = 1500;
+      const maxScroll_s2 = 2000;
+      const maxScroll_s3 = 2500;
+
       // Calculate opacity (0 - 1)
       const newOpacity = Math.max(1 - scrolled / maxScroll, 0);
       setScrollOpacity(newOpacity);
-    };
+  
+      const newScale1 = scrolled > startScroll
+          ? Math.min(1, 0.2 + (scrolled  / maxScroll_s1) * 0.8) // Adjust the scale rate by modifying 0.2
+          : 0.1; // Initial scale if scroll position is before startScroll
+      setScale1(newScale1);
+
+      const newScale2 = scrolled > startScroll
+          ? Math.min(1, 0.2 + (scrolled / maxScroll_s2) * 0.8)
+          : 0.1;
+      setScale2(newScale2);
+
+      const newScale3 = scrolled > startScroll
+          ? Math.min(1, 0.2 + (scrolled/ maxScroll_s3) * 0.8)
+          : 0.1;
+      setScale3(newScale3);
+      };
   
     useEffect(() => {
       window.addEventListener('scroll', handleScroll);
@@ -57,19 +65,6 @@ function Home() {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
-
-    const personalProjects = [
-      {
-        id: 1,
-        title: 'meteror',
-        imageUrl: image1
-      },
-      {
-        id: 2,
-        title: 'chihang',
-        imageUrl: image2
-      },
-    ];
 
     return (
         <div className="home-screen">
@@ -158,7 +153,7 @@ function Home() {
               delay={0.5}
               speed={0.7}>
               <p className='about-content'>
-                Things that I am passionate about: <strong>software engineering</strong>, <strong>games</strong> and more.
+                Things that I am passionate about: <strong>software engineering</strong>, <strong>game development</strong> and more.
               </p> 
             </MotionAnimate>
             <MotionAnimate animation='scrollPosition' xPos={[0, 500]} scrollPositions={[0.3, 0]}>
@@ -188,60 +183,78 @@ function Home() {
               Skills:
             </p>
             <div className="skills-images-container">
-              <p className='sub-content'>
-                <ul className='skill-list'>
-                  <li>Python</li>
-                  <li>C/C++</li>
-                  <li>Java</li>
-                  <li>JavaScript <br></br>(React/React-native)</li>
-                  <li>Bash/Shell Scripting</li>
-                  <li>SQL</li>
-                  <li>R</li>
-                  <li>Qt</li>
-                  <li>Ren'Py</li>
-                  <li>ASP</li>
-                  <li>Haskell</li>
-                  <li>Firebase</li>
-                </ul>
-              </p>
+            <MotionAnimate
+              reset={true}
+              variant={{
+                hidden: { opacity: 0, x:-20 },
+                show: { opacity: 1, x:0 }}}
+              speed={0.7}>
+                <p className='sub-content'>
+                  <ul className='skill-list'>
+                    <li>Python</li>
+                    <li>C/C++</li>
+                    <li>Java</li>
+                    <li>JavaScript <br></br>(React/React-native)</li>
+                    <li>Bash/Shell Scripting</li>
+                    <li>SQL</li>
+                    <li>R</li>
+                    <li>Qt</li>
+                    <li>Ren'Py</li>
+                    <li>ASP</li>
+                    <li>Haskell</li>
+                    <li>Firebase</li>
+                  </ul>
+                </p>
+              </MotionAnimate>
               <div className="skills-images">
                 <div className='vertical-images'>
-                  <img src={image1} alt="Skill related image 1" className="skill-image1" />
-                  <img src={image2} alt="Skill related image 2" className="skill-image2" />
+                  <img src={image1} alt="Skill related image 1" className="skill-image1" style={{ transform: `scale(${scale1})` }} />
+                  <img src={image2} alt="Skill related image 2" className="skill-image2" style={{ transform: `scale(${scale2})` }} />
                 </div>
-                <img src={image3} alt="Skill related image 3" className="skill-image3" />
+                <img src={image3} alt="Skill related image 3" className="skill-image3" style={{ transform: `scale(${scale3})` }} />
               </div>
             </div>
           </div>
 
         {/*Experiece Block*/}
           <div className='section-container'> 
-            <p className='section-name'>Experience</p> 
-            <p className='about-content'>
-              Studied economics from <strong>the University of Hong Kong</strong>.
-              Master of computer science at the <strong>University of Bath</strong>.
-            </p> 
-            <button className='more-button'
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <span style={{ display: 'flex', alignItems: 'center' }}>
-                <p className='more-button-text'>more</p>
-                <svg
-                  className="arrow-right"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30%"
-                  height="30%"
-                  viewBox="0 0 24 24"
-                  style={{
-                    fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
-                    transition: 'fill 0.3s ease',
-                  }}
-                >
-                  <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
-                </svg>
-              </span>
-            </button>
+            <MotionAnimate animation='scrollPosition' xPos={[-1000, 0]} scrollPositions={[0.1, 0.5]}>
+              <p className='section-name'>Experience</p> 
+            </MotionAnimate>
+            <MotionAnimate
+              animation='fadeInUp'
+              reset={true}
+              distance={50}
+              delay={0.5}
+              speed={0.7}>
+              <p className='about-content'>
+                Studied economics from <strong>the University of Hong Kong</strong>.
+                Master of computer science at the <strong>University of Bath</strong>.
+              </p> 
+            </MotionAnimate>
+            <MotionAnimate animation='scrollPosition' xPos={[0, 500]} scrollPositions={[0.3, 0]}>
+              <button className='more-button'
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <span style={{ display: 'flex', alignItems: 'center' }}>
+                  <p className='more-button-text'>more</p>
+                  <svg
+                    className="arrow-right"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30%"
+                    height="30%"
+                    viewBox="0 0 24 24"
+                    style={{
+                      fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
+                      transition: 'fill 0.3s ease',
+                    }}
+                  >
+                    <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+                  </svg>
+                </span>
+              </button>
+            </MotionAnimate>
           </div>
       </div>
     );
