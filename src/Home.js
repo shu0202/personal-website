@@ -6,9 +6,9 @@ import Header from './Header';
 import { MotionAnimate } from 'react-motion-animate'
 
 
-import image1 from './images/cg_meteror.jpeg';
-import image2 from './images/cg_chihang.png';
-import image3 from './images/cg_bloom.png';
+import image1 from './images/cg_pool.png';
+import image2 from './images/cg_bloom.png';
+import image3 from './images/cg_meteror.png';
 
 function Home() {
     const navigate = useNavigate();
@@ -193,7 +193,7 @@ function Home() {
                   <li>Python</li>
                   <li>C/C++</li>
                   <li>Java</li>
-                  <li>JavaScript (React/React-native)</li>
+                  <li>JavaScript <br></br>(React/React-native)</li>
                   <li>Bash/Shell Scripting</li>
                   <li>SQL</li>
                   <li>R</li>
@@ -205,8 +205,10 @@ function Home() {
                 </ul>
               </p>
               <div className="skills-images">
-                <img src={image1} alt="Skill related image 1" className="skill-image1" />
-                <img src={image2} alt="Skill related image 2" className="skill-image2" />
+                <div className='vertical-images'>
+                  <img src={image1} alt="Skill related image 1" className="skill-image1" />
+                  <img src={image2} alt="Skill related image 2" className="skill-image2" />
+                </div>
                 <img src={image3} alt="Skill related image 3" className="skill-image3" />
               </div>
             </div>
