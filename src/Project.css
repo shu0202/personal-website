@@ -8,7 +8,7 @@
 .banner-image {
   display: flex;
   width: 100%;
-  height: 600px; 
+  height: auto; 
 }
 
 .banner-image img {
@@ -25,7 +25,6 @@
   transform: translate(-50%, -50%);
   display: flex;
   width: 100%;
-  padding: 0 20px;
   /* Added z-index to ensure buttons are above other elements if necessary */
   z-index: 10;
 }
@@ -33,7 +32,6 @@
 .buttons button {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
   background-color: transparent;
   transition: all 0.3s ease-in-out;
@@ -84,8 +82,7 @@
 
 .title-container {
   position: relative;
-  height: 200px;
-  overflow: hidden;
+  height: 300%;
 }
 
 .title-container img {
@@ -104,16 +101,14 @@
 .button-container {
   display: flex;
   justify-content: center;
-  margin: 0px 100px;
-  margin-bottom: 50px;
 }
 
 .nav-button {
   font-family: 'PPTelegrafRegular', sans-serif;
   background-color: transparent;
   border: none;
-  font-size: 15px;
-  padding: 20px 50px;
+  font-size: 100%;
+  padding: 2% 3%;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
@@ -126,9 +121,9 @@
   content: "";
   display: block;
   width: 100%;
-  height: 2px;
+  height: 7%;
   background-color: currentColor;
-  margin-top: 1px;
+  margin-top: 1%;
 }
 
 .arrow-right {
@@ -138,4 +133,9 @@
 
 .arrow-left {
   rotate: 180deg;
+}
+
+.project-description {
+  margin-top: 20%;
+  font-size: 200%;
 }

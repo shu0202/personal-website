@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Project.css';
 import Header from './Header';
+import projectsData from './projects.json'; // Import the JSON file
 
-import { MotionAnimate } from 'react-motion-animate'
-
-import image1 from './images/banner_meteror.png';
-import image2 from './images/banner_chihang.png';
-import image3 from './images/banner_epiphany.png';
-import image4 from './images/banner_bloom.png';
-import title1 from './images/title_meteror.png';
-import title2 from './images/title_chihang.png';
-import title3 from './images/title_epiphany.png';
-import title4 from './images/title_bloom.png';
+import { MotionAnimate } from 'react-motion-animate';
 
 const Project = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,9 +13,7 @@ const Project = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [hasTitleBeenVisible, setHasTitleBeenVisible] = useState([false, false, false]);
 
-  const images = [image1, image2, image3, image4];
-  const titles = [title1, title2, title3, title4];
-
+  const currentProject = projectsData[currentIndex];
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -49,12 +39,12 @@ const Project = () => {
   }, [isScrollingDown, currentIndex, hasTitleBeenVisible]);
 
   const handlePrevClick = () => {
-    setCurrentIndex((currentIndex - 1 + images.length) % images.length);
+    setCurrentIndex((currentIndex - 1 + projectsData.length) % projectsData.length);
     resetTitleVisibility();
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
+    setCurrentIndex((currentIndex + 1) % projectsData.length);
     resetTitleVisibility();
   };
 
@@ -87,9 +77,11 @@ const Project = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const showExtraButtons = currentProject.title === 'title_meteror.png' || currentProject.title === 'title_chihang.png';
+
   return (
     <div className="App">
-       <Header />
+      <Header />
       <div
         className="banner"
         onMouseMove={handleMouseMove}
@@ -102,8 +94,8 @@ const Project = () => {
             transition: 'transform 0.5s ease-in-out',
           }}
         >
-          {images.map((image, index) => (
-            <img key={index} src={image} alt={`Banner ${index}`} />
+          {projectsData.map((project, index) => (
+            <img key={index} src={require(`./images/${project.image}`)} alt={`Banner ${index}`} />
           ))}
         </div>
         <div
@@ -153,20 +145,33 @@ const Project = () => {
         <button className="nav-button" onClick={handleTopClick}>TOP</button>
         <button className="nav-button">ABOUT</button>
         <button className="nav-button">SYSTEM</button>
-        <button className="nav-button">CODE</button>
+        <button className="nav-button" onClick={() => window.open(currentProject.codeLink, '_blank')}>CODE</button>
+        {/* Conditionally render the STORY and CHARACTERS buttons */}
+        {showExtraButtons && (
+          <>
+            <button className="nav-button">STORY</button>
+            <button className="nav-button">CHARACTERS</button>
+          </>
+        )}
       </div>
-      <MotionAnimate reset={true}>
+      <MotionAnimate
+              animation='fadeInUp'
+              reset={true}
+              distance={100}
+              delay={0.5}
+              speed={0.7}>
       <div className="title-container">
-        {titles.map((title, index) => (
+        {projectsData.map((project, index) => (
           <img
             key={index}
-            src={title}
+            src={require(`./images/${project.title}`)}
             alt={`Title ${index}`}
             className={isTitleVisible && currentIndex === index ? 'active' : ''}
           />
         ))}
       </div>
       </MotionAnimate>
+      <p className="project-description">{currentProject.description}</p>
     </div>
   );
 };

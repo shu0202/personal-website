@@ -8,6 +8,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [opacity, setOpacity] = useState(1);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   const handleHomeClick = () => {
     navigate('/'); // Navigate to the home route
@@ -18,25 +19,42 @@ const Header = () => {
   };
 
   const handleScroll = () => {
-    if (location.pathname === '/') {
-      setOpacity(1);
-      return;
-    }
+  if (location.pathname === '/') {
+    setOpacity(1);
+    return;
+  }
 
-    const scrolled = window.scrollY;
-    const maxScroll = 200; // Adjust this value as needed
+  const scrolled = window.scrollY;
+  const maxScroll = 200; // Adjust this value as needed
 
-    // Calculate opacity (0 - 1)
-    const newOpacity = Math.max(1 - scrolled / maxScroll, 0);
-    setOpacity(newOpacity);
-  };
+  // Calculate current scroll position
+  const currentScrollPos = window.pageYOffset;
+
+  // Determine scroll direction
+  const isScrollingDown = currentScrollPos > prevScrollPos;
+
+  // Update opacity based on scroll direction
+  let newOpacity;
+  if (isScrollingDown) {
+    // Decrease opacity when scrolling down
+    newOpacity = Math.max(1 - scrolled / maxScroll, 0);
+  } else {
+    // Increase opacity when scrolling up
+    newOpacity = Math.min(opacity + (prevScrollPos - scrolled) / (maxScroll-100), 1);
+  }
+
+  setOpacity(newOpacity);
+
+  // Update previous scroll position
+  setPrevScrollPos(currentScrollPos);
+};
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [[prevScrollPos]]);
 
   // Check if the current route is the home page
   const isHome = location.pathname === '/';
