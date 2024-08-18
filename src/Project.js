@@ -112,7 +112,7 @@ const Project = () => {
               style={{ transition: 'background-color 0.3s ease-in-out' }}
             >
               <svg
-                className="arrow-left"
+                className="arrow-left-project"
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
                 height="50"
@@ -130,7 +130,7 @@ const Project = () => {
               style={{ transition: 'background-color 0.3s ease-in-out' }}
             >
               <svg
-                className="arrow-right"
+                className="arrow-right-project"
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
                 height="50"
@@ -199,7 +199,7 @@ const Project = () => {
           </div>
         )}
       </div>
-      
+
     </div>
   );
 };

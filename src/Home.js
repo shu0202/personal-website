@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import './Home.css';
 import Header from './Header';
+import Footer from './Footer';
 
 import { MotionAnimate } from 'react-motion-animate'
 
@@ -256,6 +257,7 @@ function Home() {
               </button>
             </MotionAnimate>
           </div>
+          <Footer />
       </div>
     );
   }

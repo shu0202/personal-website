@@ -145,12 +145,13 @@
   margin-top: 1%;
 }
 
-.arrow-right {
+.arrow-right-project {
   margin-right: 0;
   color: #c8c8c8;
 }
 
-.arrow-left {
+.arrow-left-project {
+  margin-top: -35%;
   rotate: 180deg;
 }
 

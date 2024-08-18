@@ -21,50 +21,36 @@
   }
   
   .header-logo {
-    flex-basis: 10%;
+    transition: opacity 0.5s ease;
+  }
+
+  .normal-logo {
+    position: absolute;
+    width: 1500%;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+  }
+
+  .hover-logo {
+    position: absolute;
+    width: 1500%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
   
   .logo-button {
-    top: 0;
-    left: 20%;
     background-color: transparent;
     border: none;
     cursor: pointer;
     position: relative; /* Ensure this is relative for absolute children */
-    margin-top: -50px;
+    transition: opacity 0.3s ease;
   }
-  
-  .logo-button img {
-    top: 0;
-    max-width: 100px;
-    height: auto;
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for fading */
-  
-  }
-  
-  .logo-button img.normal-logo {
-    top: 0;
-    position: absolute; /* Ensure the normal logo is in the same spot */
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for fading */
-  }
-  
-  .logo-button img.hover-logo {
-    top: 0;
-    position: absolute; /* Ensure the hover logo is in the same spot */
-    top: 0;
-    left: 0;
-    opacity: 0; /* Start with hidden hover logo */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for fading */
-  }
-  
-  .logo-button:hover img.normal-logo {
+
+  .logo-container:hover .normal-logo {
     opacity: 0; /* Fade out the normal logo on hover */
   }
   
-  .logo-button:hover img.hover-logo {
+  .logo-container:hover .hover-logo {
     opacity: 1; /* Fade in the hover logo on hover */
   }
   
@@ -80,7 +66,7 @@
   .nav-button_h {
     background-color: transparent;
     font-family: 'PPTelegrafRegular', sans-serif;
-    color: #fff;
+    color: #ffffff;
     border: none;
     padding: 0.5rem 0.5rem;
     font-size: 16px;
@@ -186,23 +172,10 @@
     transform: scaleX(1);
   }
 
-  .social-icons {
+  .social-icons-project {
     display: flex;
-    margin-left: 40%;
-    margin-top: 0.5%;
-  }
-  
-  .social-icon1 {
-    width: 90%; /* Adjust the size of the icons */
-    height: auto;
-    cursor: pointer;
-  }
-  
-  .social-icon2 {
-    width: 15%; /* Adjust the size of the icons */
-    margin-left: 15%;
-    height: auto;
-    cursor: pointer;
+    margin-left: 100.7%;
+    margin-top: 1%;
   }
   
   .social-icons-main {
@@ -210,18 +183,125 @@
     display: flex;
     width: 20%;
     margin-left: 86.6%;
-    margin-top: 4.8%;
+    margin-top: 2.5%;
   }
 
+  /*--------------*/
+
   .social-icon1-main {
-    width: 69%; /* Adjust the size of the icons */
-    height: auto;
     cursor: pointer;
+    transition: opacity 0.3s ease;
   }
   
   .social-icon2-main {
-    width: 11%; /* Adjust the size of the icons */
-    margin-left: 6%;
-    height: auto;
     cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icon1-main-black {
+    width: 10%; /* Adjust the size of the icons */
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 1;
+  }
+  
+  .social-icon1-main-grey {
+    width: 10%; /* Adjust the size of the icons */
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 0;
+  }
+
+  .main-icon-1:hover .social-icon1-main-black {
+    opacity: 0;
+  }
+  
+  .main-icon-1:hover .social-icon1-main-grey {
+    opacity: 1;
+  }
+
+  .social-icon2-main-black {
+    width: 10%; /* Adjust the size of the icons */
+    margin-left: 19%;
+    margin-top: -0.5%;
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 1;
+  }
+  
+  .social-icon2-main-grey {
+    width: 10%; /* Adjust the size of the icons */
+    margin-left: 19%;
+    margin-top: -0.5%;
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 0;
+  }
+
+  .main-icon-2:hover .social-icon2-main-black {
+    opacity: 0;
+  }
+  
+  .main-icon-2:hover .social-icon2-main-grey {
+    opacity: 1;
+  }
+
+  /*------------------------*/
+
+  .social-icon1-project {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icon2-project {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .social-icon1-project-white {
+    width: 7%; /* Adjust the size of the icons */
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 1;
+  }
+  
+  .social-icon1-project-grey {
+    width: 7%; /* Adjust the size of the icons */
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 0;
+  }
+
+  .project-icon-1:hover .social-icon1-project-white {
+    opacity: 0;
+  }
+  
+  .project-icon-1:hover .social-icon1-project-grey {
+    opacity: 1;
+  }
+
+  .social-icon2-project-white {
+    width: 7%; /* Adjust the size of the icons */
+    margin-left: 13.5%;
+    margin-top: -0.5%;
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 1;
+  }
+  
+  .social-icon2-project-grey {
+    width: 7%; /* Adjust the size of the icons */
+    margin-left: 13.5%;
+    margin-top: -0.5%;
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 0;
+  }
+
+  .project-icon-2:hover .social-icon2-project-white {
+    opacity: 0;
+  }
+  
+  .project-icon-2:hover .social-icon2-project-grey {
+    opacity: 1;
   }

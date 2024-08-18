@@ -1,0 +1,116 @@
+/* Footer Styles */
+
+@font-face {
+    font-family: 'PPTelegrafRegular';
+    src: url('./fonts/PPTelegraf-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PPTelegrafLight';
+    src: url('./fonts/PPTelegraf-Ultralight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.footer {
+    padding-top: 5%;
+    padding-left: 2%;
+    width: 100%;
+    background-color: rgb(243, 242, 242); /* Background color for the footer */
+    border-top: 1px solid rgba(65, 65, 65, 0.1); /* Thin border at the top */
+  }
+  
+  .footer-content {
+    background-color: rgb(243, 242, 242);
+    height: 100%; /* This will make it fill the footer */
+    display: flex;
+    justify-content: center;
+  }
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: rgb(0, 0, 0);
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.icons {
+    margin-left: -95%;
+}
+
+/* Social Icons Styles */
+.icon1, .icon2 {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.icon1-black {
+    width: 2%; /* Adjust the size of the icons */
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 1;
+}
+  
+.icon1-grey {
+    width: 2%; /* Adjust the size of the icons */
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 0;
+}
+
+.icon2-black {
+    width: 2%; /* Adjust the size of the icons */
+    margin-left: 5%;
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 1;
+}
+  
+.icon2-grey {
+    width: 2%; /* Adjust the size of the icons */
+    margin-left: 5%;
+    height: auto;
+    position: absolute; /* Ensure the normal logo is in the same spot */
+    opacity: 0;
+}
+
+/* Hover Effects */
+.icon-1:hover .icon1-black {
+  opacity: 0;
+}
+
+.icon-1:hover .icon1-grey {
+  opacity: 1;
+}
+
+.icon-2:hover .icon2-black {
+  opacity: 0;
+}
+
+.icon-2:hover .icon2-grey {
+  opacity: 1;
+}
+
+.fill {
+    color: transparent;
+}
+
+.words {
+    margin-top: 5%;
+}
+
+.contact-button {
+    background-color: transparent;
+    font-family: 'PPTelegrafLight', sans-serif;
+    color: #000000;
+    border: none;
+}
