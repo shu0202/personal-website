@@ -3,6 +3,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import logo from './images/logo.png';
 import logoHover from './images/logo_hover.png';
 import './Header.css';
+import linkedinWhite from './images/linkedin_white.png'; // Add LinkedIn image import
+import githubWhite from './images/github_white.png'; // Add GitHub image import
+import linkedinBlack from './images/linkedin_black.png'; // Add LinkedIn image import
+import githubBlack from './images/github_black.png'; // Add GitHub image import
+import './Header.css';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -78,6 +83,17 @@ const Header = () => {
           <button className="nav-button_v">CONTACT</button>
         </nav>
       )}
+
+      {isHome && (
+        <div className="social-icons-main">
+          <a href="https://www.linkedin.com/in/yan-chun-yeung-a0803320b/" target="_blank" rel="noopener noreferrer">
+            <img src={linkedinBlack} alt="LinkedIn" className="social-icon1-main" />
+          </a>
+          <a href="https://github.com/shu0202" target="_blank" rel="noopener noreferrer">
+            <img src={githubBlack} alt="GitHub" className="social-icon2-main" />
+          </a>
+        </div>
+      )}
       
       {!isHome && (
         <nav className="header-nav-h">
@@ -85,8 +101,17 @@ const Header = () => {
           <button className="nav-button_h">EXPERIENCE</button>
           <button className="nav-button_h" onClick={handleProjectButtonClick}>PROJECTS</button>
           <button className="nav-button_h">CONTACT</button>
+          <div className="social-icons">
+            <a href="https://www.linkedin.com/in/yan-chun-yeung-a0803320b/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinWhite} alt="LinkedIn" className="social-icon1" />
+            </a>
+            <a href="https://github.com/shu0202" target="_blank" rel="noopener noreferrer">
+              <img src={githubWhite} alt="GitHub" className="social-icon2" />
+            </a>
+          </div>
         </nav>
       )}
+
     </header>
   );
 };

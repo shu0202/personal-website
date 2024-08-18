@@ -3,25 +3,29 @@
       "image": "banner_bloom.png",
       "title": "title_bloom.png",
       "description": "This is a description for the Bloom project. It involves complex animations and stunning visuals.",
-      "codeLink": "https://github.com/dfoshidero/Bloom"
+      "codeLink": "https://github.com/dfoshidero/Bloom",
+      "language": ["JavaScript", "React Native","CSS"]
     },
     {
       "image": "banner_meteror.png",
       "title": "title_meteror.png",
-      "description": "Meteor project focuses on backend development using Node.js and MongoDB.",
-      "codeLink": "https://github.com/shu0202/Meteror-rain"
+      "description": "\"Meteor Rain\" is an immersive interactive visual novel with original characters and sprites. The captivating narrative follows a branching storyline, where the outcome is shaped by the decisions made throughout the game. Emphasizing the impact of player choices, \"Meteor Rain\" offers a compelling interactive experience that encourages multiple playthroughs.",
+      "codeLink": "https://github.com/shu0202/Meteror-rain",
+      "language": ["Ren'py", "Python", "ATL"]
     },
     {
       "image": "banner_epiphany.png",
       "title": "title_epiphany.png",
       "description": "Epiphany is a mobile app developed using React Native with a focus on user experience.",
-      "codeLink": "https://github.com/shu0202/Epiphany"
+      "codeLink": "https://github.com/shu0202/Epiphany",
+      "language": ["C++", "MakeFile","ncurses","Shell/Bash Scripting"]
     },
     {
       "image": "banner_chihang.png",
       "title": "title_chihang.png",
       "description": "Chihang is a game development project using Unity and C#.",
-      "codeLink": "https://github.com/shu0202/Adventure-of-Chi-Hang-final-"
+      "codeLink": "https://github.com/shu0202/Adventure-of-Chi-Hang-final-",
+      "language": ["Ren'py", "Python", "ATL"]
     }
   ]
   

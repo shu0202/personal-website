@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'PPTelegrafRegular';
+  src: url('./fonts/PPTelegraf-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPTelegrafLight';
+  src: url('./fonts/PPTelegraf-Ultralight.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.project {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 .banner {
   position: relative;
   overflow: hidden;
@@ -110,6 +128,7 @@
   font-size: 100%;
   padding: 2% 3%;
   cursor: pointer;
+  color: rgb(1, 0, 82);
   transition: color 0.3s ease-in-out;
 }
 
@@ -135,7 +154,52 @@
   rotate: 180deg;
 }
 
+.project-description-container {
+  width: 30%;
+  justify-content: flex-start;
+  margin-left: 17%;
+}
 .project-description {
-  margin-top: 20%;
-  font-size: 200%;
+  font-size: 190%;
+  font-family: 'PPTelegrafLight', sans-serif;
+  color: rgb(1, 0, 82);
+}
+
+.screen-name-container {
+  text-align: center;
+}
+
+.screen-name {
+  font-size: 270%;
+  font-family: 'PPTelegrafLight', sans-serif;
+  color: rgb(1, 0, 82);
+}
+
+.screen-name-description {
+  margin-top: 17%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Ensures the screen name and description are stacked vertically */
+}
+
+.language-tech-container {
+  margin-left: 150%;
+  width: 100%;
+}
+
+.language-list {
+  font-size: 190%;
+  font-family: 'PPTelegrafLight', sans-serif;
+  color: rgb(1, 0, 82);
+  list-style-type: none;
+  align-items: flex-end;
+}
+
+.language-item::before {
+  content: "- "; /* Add hyphen before each list item */
+}
+
+.language-list-title {
+  font-size: 105%;
 }

@@ -185,3 +185,43 @@
     visibility: visible;
     transform: scaleX(1);
   }
+
+  .social-icons {
+    display: flex;
+    margin-left: 40%;
+    margin-top: 0.5%;
+  }
+  
+  .social-icon1 {
+    width: 90%; /* Adjust the size of the icons */
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .social-icon2 {
+    width: 15%; /* Adjust the size of the icons */
+    margin-left: 15%;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .social-icons-main {
+    position: fixed;
+    display: flex;
+    width: 20%;
+    margin-left: 86.6%;
+    margin-top: 4.8%;
+  }
+
+  .social-icon1-main {
+    width: 69%; /* Adjust the size of the icons */
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .social-icon2-main {
+    width: 11%; /* Adjust the size of the icons */
+    margin-left: 6%;
+    height: auto;
+    cursor: pointer;
+  }

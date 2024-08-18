@@ -248,11 +248,16 @@
 
 .skill-list {
   width: 70%;
+  list-style-type: none;
 }
 
 .skill-list li {
   width:200%;
   margin-bottom: 30%; /* Adjust this value to control spacing between items */
+}
+
+.skill-list li::before {
+  content: "- "; /* Add hyphen before each list item */
 }
 
 .vertical-images {

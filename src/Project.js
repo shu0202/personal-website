@@ -11,6 +11,7 @@ const Project = () => {
   const [isTitleVisible, setIsTitleVisible] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState('About')
   const [hasTitleBeenVisible, setHasTitleBeenVisible] = useState([false, false, false]);
 
   const currentProject = projectsData[currentIndex];
@@ -41,11 +42,13 @@ const Project = () => {
   const handlePrevClick = () => {
     setCurrentIndex((currentIndex - 1 + projectsData.length) % projectsData.length);
     resetTitleVisibility();
+    setCurrentScreen('About');
   };
 
   const handleNextClick = () => {
     setCurrentIndex((currentIndex + 1) % projectsData.length);
     resetTitleVisibility();
+    setCurrentScreen('About');
   };
 
   const resetTitleVisibility = () => {
@@ -80,7 +83,7 @@ const Project = () => {
   const showExtraButtons = currentProject.title === 'title_meteror.png' || currentProject.title === 'title_chihang.png';
 
   return (
-    <div className="App">
+    <div className="project">
       <Header />
       <div
         className="banner"
@@ -143,22 +146,21 @@ const Project = () => {
 
       <div className="button-container">
         <button className="nav-button" onClick={handleTopClick}>TOP</button>
-        <button className="nav-button">ABOUT</button>
-        <button className="nav-button">SYSTEM</button>
-        <button className="nav-button" onClick={() => window.open(currentProject.codeLink, '_blank')}>CODE</button>
+        <button className="nav-button" onClick={() => setCurrentScreen('About')}>ABOUT</button>
+        <button className="nav-button" onClick={() => setCurrentScreen('System')}>SYSTEM</button>
         {/* Conditionally render the STORY and CHARACTERS buttons */}
         {showExtraButtons && (
           <>
-            <button className="nav-button">STORY</button>
-            <button className="nav-button">CHARACTERS</button>
+            <button className="nav-button" onClick={() => setCurrentScreen('Story')}>STORY</button>
+            <button className="nav-button" onClick={() => setCurrentScreen('Characters')}>CHARACTERS</button>
           </>
         )}
+        <button className="nav-button" onClick={() => window.open(currentProject.codeLink, '_blank')}>CODE</button>
       </div>
       <MotionAnimate
               animation='fadeInUp'
-              reset={true}
               distance={100}
-              delay={0.5}
+              delay={1.0}
               speed={0.7}>
       <div className="title-container">
         {projectsData.map((project, index) => (
@@ -171,7 +173,33 @@ const Project = () => {
         ))}
       </div>
       </MotionAnimate>
-      <p className="project-description">{currentProject.description}</p>
+      <div className='screen-name-description'>
+        <div className='screen-name-container'>
+          <div className="screen-name">
+            {currentScreen.toUpperCase()}
+          </div>
+        </div>
+        {currentScreen === 'About' && (
+          <div className='project-description-container'>
+            <MotionAnimate reset={true}>
+              <p className="project-description">{currentProject.description}</p>
+            </MotionAnimate>
+            <MotionAnimate animation='scrollPosition' xPos={[1000, 0]} scrollPositions={[0.4, 0.6]}>
+              <div className="language-tech-container">
+                <ul className="language-list">
+                  <p className='language-list-title'>Languages & Technology</p>
+                  {currentProject.language.map((lang, index) => (
+                    <li key={index} className="language-item">
+                      {lang}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </MotionAnimate>
+          </div>
+        )}
+      </div>
+      
     </div>
   );
 };
