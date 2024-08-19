@@ -4,28 +4,36 @@
       "title": "title_bloom.png",
       "description": "This is a description for the Bloom project. It involves complex animations and stunning visuals.",
       "codeLink": "https://github.com/dfoshidero/Bloom",
-      "language": ["JavaScript", "React Native","CSS"]
+      "language": ["JavaScript", "React Native","CSS"],
+      "system": "",
+      "system-link": ""
     },
     {
       "image": "banner_meteror.png",
       "title": "title_meteror.png",
       "description": "\"Meteor Rain\" is an immersive interactive visual novel with original characters and sprites. The captivating narrative follows a branching storyline, where the outcome is shaped by the decisions made throughout the game. Emphasizing the impact of player choices, \"Meteor Rain\" offers a compelling interactive experience that encourages multiple playthroughs.",
       "codeLink": "https://github.com/shu0202/Meteror-rain",
-      "language": ["Ren'py", "Python", "ATL"]
+      "language": ["Ren'py", "Python", "ATL"],
+      "system": "\"Meteor Rain\" uses Ren'py which is a visual novel engine. Ren'py is a renouned engine that is used by thousands of creators around the world. The tool helps creators to create their interactive stories that could run on computers and mobile devices using words and images. The easy to learn language allows writing large visual novels efficiently, while the Python extended scripting supports the complex animations and back-end logics.",
+      "system-link": {"Ren'py":"https://www.renpy.org/", "Python":"https://www.python.org/"}
     },
     {
       "image": "banner_epiphany.png",
       "title": "title_epiphany.png",
       "description": "Epiphany is a mobile app developed using React Native with a focus on user experience.",
       "codeLink": "https://github.com/shu0202/Epiphany",
-      "language": ["C++", "MakeFile","ncurses","Shell/Bash Scripting"]
+      "language": ["C++", "MakeFile","ncurses","Shell/Bash Scripting"],
+      "system": "",
+      "system-link": ""
     },
     {
       "image": "banner_chihang.png",
       "title": "title_chihang.png",
       "description": "Chihang is a game development project using Unity and C#.",
       "codeLink": "https://github.com/shu0202/Adventure-of-Chi-Hang-final-",
-      "language": ["Ren'py", "Python", "ATL"]
+      "language": ["Ren'py", "Python", "ATL"],
+      "system": "",
+      "system-link": ""
     }
   ]
   

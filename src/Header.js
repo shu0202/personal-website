@@ -45,7 +45,12 @@ const Header = () => {
       newHeaderOpacity = Math.min(headerOpacity + (prevScrollPos - scrolled) / (maxScroll - 100), 1);
     }
     if (location.pathname === '/') {
-      setHeaderOpacity(1);
+      if (scrolled > 3650){
+        newHeaderOpacity = Math.max(1 - ((scrolled-3650) / (maxScroll)), 0);
+        setHeaderOpacity(newHeaderOpacity);
+      } else {
+        setHeaderOpacity(1);
+      }
     } else {
       setHeaderOpacity(newHeaderOpacity);
     }

@@ -204,3 +204,15 @@
 .language-list-title {
   font-size: 105%;
 }
+
+.project-system-container {
+  width: 60%;
+  justify-content: center;
+  margin-left: 20.5%;
+}
+
+.project-system {
+  font-size: 175%;
+  font-family: 'PPTelegrafLight', sans-serif;
+  color: rgb(1, 0, 82);
+}

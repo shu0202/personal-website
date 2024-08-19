@@ -26,7 +26,7 @@
     background-color: rgb(243, 242, 242);
     height: 100%; /* This will make it fill the footer */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
 .footer-links {
@@ -44,7 +44,8 @@
 }
 
 .icons {
-    margin-left: -95%;
+    margin-top: 1%;
+    margin-left: 1.2%;
 }
 
 /* Social Icons Styles */
@@ -56,6 +57,7 @@
 .icon1-black {
     width: 2%; /* Adjust the size of the icons */
     height: auto;
+    margin-top: 10%;
     position: absolute; /* Ensure the normal logo is in the same spot */
     opacity: 1;
 }
@@ -63,6 +65,7 @@
 .icon1-grey {
     width: 2%; /* Adjust the size of the icons */
     height: auto;
+    margin-top: 10%;
     position: absolute; /* Ensure the normal logo is in the same spot */
     opacity: 0;
 }
@@ -70,6 +73,7 @@
 .icon2-black {
     width: 2%; /* Adjust the size of the icons */
     margin-left: 5%;
+    margin-top: 10%;
     height: auto;
     position: absolute; /* Ensure the normal logo is in the same spot */
     opacity: 1;
@@ -78,6 +82,7 @@
 .icon2-grey {
     width: 2%; /* Adjust the size of the icons */
     margin-left: 5%;
+    margin-top: 10%;
     height: auto;
     position: absolute; /* Ensure the normal logo is in the same spot */
     opacity: 0;
@@ -106,11 +111,66 @@
 
 .words {
     margin-top: 5%;
+    padding-bottom: 5%;
+    width: 20%;
+    margin-left: 0%;
 }
 
-.contact-button {
+.small-words {
+    flex-direction: row;
+    width: 150%
+}
+
+.small-titles {
+    margin-left: 2%;
+}
+
+.small-title {
+    font-family: 'PPTelegrafRegular', sans-serif;
+    font-size: 110%;
+}
+
+.footer-button {
     background-color: transparent;
     font-family: 'PPTelegrafLight', sans-serif;
     color: #000000;
     border: none;
+    font-size: 100%;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease, text-decoration-thickness 0.3s ease;
+}
+
+.footer-button:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1%;
+    text-underline-offset: 4px;
+}
+
+.footer-words {
+    background-color: transparent;
+    font-family: 'PPTelegrafLight', sans-serif;
+    color: #000000;
+    border: none;
+    font-size: 100%;
+    padding: 0;
+    text-decoration: none;
+}
+
+.footer-seperate {
+    font-family: 'PPTelegrafLight', sans-serif;
+    margin-left: 2%;
+    margin-right: 3%;
+}
+
+.logo-black {
+    position: absolute;
+    opacity: 1;
+    width: 7%;
+    margin-left: 1.3%;
+    margin-top: 0%;
+}
+
+.location-chunk {
+    margin-top: 40%;
 }

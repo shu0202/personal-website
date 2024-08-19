@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Project.css';
 import Header from './Header';
+import Footer from './Footer';
 import projectsData from './projects.json'; // Import the JSON file
 
 import { MotionAnimate } from 'react-motion-animate';
@@ -157,11 +158,6 @@ const Project = () => {
         )}
         <button className="nav-button" onClick={() => window.open(currentProject.codeLink, '_blank')}>CODE</button>
       </div>
-      <MotionAnimate
-              animation='fadeInUp'
-              distance={100}
-              delay={1.0}
-              speed={0.7}>
       <div className="title-container">
         {projectsData.map((project, index) => (
           <img
@@ -172,7 +168,6 @@ const Project = () => {
           />
         ))}
       </div>
-      </MotionAnimate>
       <div className='screen-name-description'>
         <div className='screen-name-container'>
           <div className="screen-name">
@@ -198,8 +193,22 @@ const Project = () => {
             </MotionAnimate>
           </div>
         )}
+        {currentScreen === 'System' && (
+          <div className='project-system-container'>
+            <MotionAnimate reset={true}>
+              <p className="project-system">{currentProject.system}</p>
+            </MotionAnimate>
+            <div className='project-system-link-container'>
+              {Object.entries(currentProject['system-link']).map(([key, value]) => (
+                <a href={value} className='project-system-link-button' key={key}>
+                  {key}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
-
+      <Footer />
     </div>
   );
 };
