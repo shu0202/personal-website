@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Project.css';
 import Header from './Header';
 import Footer from './Footer';
@@ -16,6 +16,16 @@ const Project = () => {
   const [hasTitleBeenVisible, setHasTitleBeenVisible] = useState([false, false, false]);
 
   const currentProject = projectsData[currentIndex];
+  const hoveredButtonRefs = useRef({});
+
+  const handleMouseEnterButton = (key) => {
+    hoveredButtonRefs.current[key] = true;
+  };
+
+  const handleMouseLeaveButton = (key) => {
+    hoveredButtonRefs.current[key] = false;
+  };
+
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -200,9 +210,31 @@ const Project = () => {
             </MotionAnimate>
             <div className='project-system-link-container'>
               {Object.entries(currentProject['system-link']).map(([key, value]) => (
-                <a href={value} className='project-system-link-button' key={key}>
-                  {key}
-                </a>
+                <div
+                  className='project-system-link-button-full'
+                  onMouseEnter={() => handleMouseEnterButton(key)}
+                  onMouseLeave={() => handleMouseLeaveButton(key)}
+                  key={key}
+                >
+                  <a href={value} className='project-system-link-button' style={{ textDecoration: 'none' }}>
+                    {key}
+                  </a>
+                  <svg
+                    className="arrow-right"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="5%"
+                    height="5%"
+                    viewBox="0 0 25 25"
+                    style={{
+                      fill: hoveredButtonRefs.current[key]
+                        ? 'rgb(107, 107, 107)'
+                        : 'rgb(1, 0, 82)',
+                      transition: 'fill 0.3s ease',
+                    }}
+                  >
+                    <path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z" />
+                  </svg>
+                </div>
               ))}
             </div>
           </div>

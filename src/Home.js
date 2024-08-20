@@ -201,9 +201,11 @@ function Home() {
                     <li>R</li>
                     <li>Qt</li>
                     <li>Ren'Py</li>
+                    <li>Adobe Photoshop</li>
                     <li>ASP</li>
                     <li>Haskell</li>
                     <li>Firebase</li>
+                    <li>HTML/CSS</li>
                   </ul>
                 </p>
               </MotionAnimate>

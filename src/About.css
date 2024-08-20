@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'PPTelegrafRegular';
+    src: url('./fonts/PPTelegraf-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'PPTelegrafBold';
+    src: url('./fonts/PPTelegraf-Ultrabold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PPTelegrafLight';
+    src: url('./fonts/PPTelegraf-Ultralight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+  
+.title-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.about-title {
+    font-size: 500%;
+    font-family: 'PPTelegrafRegular', sans-serif;
+    color: rgb(1, 0, 82);
+    margin-top: 7%;
+}
+
+.about-container {
+    width: 37%;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 30%;
+}
+
+.about-paragraph {
+    font-size: 140%;
+    font-family: 'PPTelegrafLight', sans-serif;
+    color: rgb(1, 0, 82);
+}
+
+.myself {
+    position: absolute;
+    width: 12%;
+    margin-top: -19.5%;
+    margin-left: 45%
+}
+
+.divider {
+    position: absolute;
+    left: 60.7%;
+    margin-top: -19.7%;
+    width: 1px;
+    height: 25%;
+    background-color: rgb(1, 0, 82);
+}
+
+.download-CV {
+    text-decoration: none;
+    font-size: 120%;
+    font-family: 'PPTelegrafLight', sans-serif;
+    color: rgb(1, 0, 82);
+}
+
+.CV-button {
+    position: absolute;
+    margin-left: 50.4%;
+    margin-top: -5%;
+}
+
+.pdf-icon {
+    position: absolute;
+    width: 100%;
+    margin-left: -140%;
+    margin-top: -12%;
+}
+
+.location-title {
+    font-family: 'PPTelegrafRegular', sans-serif;
+    color: rgb(1, 0, 82);
+    font-size: 200%;
+}
+
+.location-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.location {
+    font-family: 'PPTelegrafLight', sans-serif;
+    color: rgb(1, 0, 82);
+    font-size: 120%;
+}
+
+.location-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.seperate {
+    font-family: 'PPTelegrafLight', sans-serif;
+    margin-left: 2%;
+    margin-right: 2%;
+}
