@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'PPTelegrafRegular';
+    src: url('./fonts/PPTelegraf-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'PPTelegrafBold';
+    src: url('./fonts/PPTelegraf-Ultrabold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PPTelegrafLight';
+    src: url('./fonts/PPTelegraf-Ultralight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) rotate(90deg);
+    }
+    40% {
+      transform: translateY(-5px) rotate(90deg);
+    }
+    60% {
+      transform: translateY(-3px) rotate(90deg);
+    }
+  }
+
+.experience {
+    height: 165vh; /* Ensures there is enough content to scroll */
+    position: relative;
+  }
+  
+  .dot {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(1, 0, 82);
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Higher z-index to be on top of the line */
+  }
+  
+  .line {
+    width: 5px; /* Adjust the width of the line */
+    background-color: rgb(1, 0, 82);
+    position: fixed;
+    top: 50%; /* Position the line just below the dot */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5; /* Lower z-index to place the line behind the dot */
+  }
+
+  .experience-title {
+    font-size: 450%;
+    font-family: 'PPTelegrafLight', sans-serif;
+    color: rgb(1, 0, 82);
+    margin-top: -222%;
+}
+
+.divider-experience {
+    position: absolute;
+    margin-top: -231.75%;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(195, 193, 193);
+}
+
+/*Block 1*/
+.experience-block1 {
+    position: absolute;
+    margin-top: -193%;
+    width: 30%;
+    margin-left: 10%
+}
+
+.year-text1 {
+    position: absolute;
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+    margin-left: 110%;
+    margin-top: -30%;
+}
+
+.line-1 {
+    background-color: rgb(1, 0, 82);
+    height: 2px;
+    margin-top: 50%;
+    margin-left: 0%;
+  }
+
+.experience-content {
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 200%;
+}
+
+/*Block 2*/
+.experience-block2 {
+    position: absolute;
+    margin-top: -165%;
+    width: 30%;
+    margin-left: 65%
+}
+
+.year-text2 {
+    position: absolute;
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+    margin-left: -20%;
+    margin-top: -26%;
+}
+
+.line-2 {
+    background-color: rgb(1, 0, 82);
+    height: 2px;
+  }
+
+/*Block 3*/
+.experience-block3 {
+    position: absolute;
+    margin-top: -137%;
+    width: 27%;
+    margin-left: 10%
+}
+
+.year-text3 {
+    position: absolute;
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+    margin-left: 110%;
+    margin-top: -35%;
+}
+
+.line-3 {
+    background-color: rgb(1, 0, 82);
+    height: 2px;
+    margin-top: -10%;
+    margin-left: 0%;
+  }
+  
+/*Block 4*/
+.experience-block4 {
+    position: absolute;
+    margin-top: -109%;
+    width: 30%;
+    margin-left: 65%
+}
+
+.year-text4 {
+    position: absolute;
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+    margin-left: -30%;
+    margin-top: -22%;
+}
+
+.line-4 {
+    background-color: rgb(1, 0, 82);
+    height: 2px;
+  }
+
+/*Block 5*/
+.experience-block5 {
+    position: absolute;
+    margin-top: -81%;
+    width: 27%;
+    margin-left: 10%
+}
+
+.year-text5 {
+    position: absolute;
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+    margin-left: 110%;
+    margin-top: -35%;
+}
+
+.line-5 {
+    background-color: rgb(1, 0, 82);
+    height: 2px;
+    margin-top: -10%;
+    margin-left: 0%;
+  }
+
+/*Block 6*/
+.experience-block6 {
+    position: absolute;
+    margin-top: -53%;
+    width: 30%;
+    margin-left: 65%
+}
+
+.year-text6 {
+    position: absolute;
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+    margin-left: -30%;
+    margin-top: -22%;
+}
+
+.line-6 {
+    background-color: rgb(1, 0, 82);
+    height: 2px;
+  }
+
+.scroll-text-experience {
+    position: absolute;
+    margin-top: -215%;
+    margin-left: 52%
+}
+
+.scroll-text-eperience-text {
+    color: rgb(1, 0, 82);
+    font-family: 'PPTelegrafLight', sans-serif;
+    font-size: 150%;
+}
+
+.arrow-down-experience {
+    position: absolute;
+    margin-top: 100%;
+    margin-left: -105%;
+    transform: rotate(90deg); /* Rotate ">" to point downwards */
+    animation: bounce 2s infinite; /* Optional: Add a bounce animation */
+}
+
+.HKU {
+    position: absolute;
+    margin-left: 200%;
+    margin-top: -45%;
+}
+
+.AIA {
+    position: absolute;
+    margin-left: -170%;
+    margin-top: -45%;
+}
+
+.UOB {
+    position: absolute;
+    width: 100%;
+    margin-left: -170%;
+    margin-top: -32.5%;
+}
+
+.HSW {
+    position: absolute;
+    margin-left: 200%;
+    margin-top: -60%;
+}

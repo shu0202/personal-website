@@ -33,6 +33,10 @@ const Header = () => {
     navigate('/contact');
   };
 
+  const handleExperienceButtonClick = () => {
+    navigate('/experience');
+  };
+
   const handleScroll = () => {
     const scrolled = window.scrollY;
     const maxScroll = 200; // Adjust this value as needed
@@ -107,7 +111,7 @@ const Header = () => {
       {isHome && (
         <nav className="header-nav-v">
           <button className="nav-button_v" onClick={handleAboutButtonClick}>ABOUT</button>
-          <button className="nav-button_v">EXPERIENCE</button>
+          <button className="nav-button_v" onClick={handleExperienceButtonClick}>EXPERIENCE</button>
           <button className="nav-button_v" onClick={handleProjectButtonClick}>PROJECTS</button>
           <button className="nav-button_v" onClick={handleContactButtonClick}>CONTACT</button>
         </nav>
@@ -132,7 +136,7 @@ const Header = () => {
       {!isHome && (
         <nav className="header-nav-h">
           <button className="nav-button_h" onClick={handleAboutButtonClick}>ABOUT</button>
-          <button className="nav-button_h">EXPERIENCE</button>
+          <button className="nav-button_h" onClick={handleExperienceButtonClick}>EXPERIENCE</button>
           <button className="nav-button_h" onClick={handleProjectButtonClick}>PROJECTS</button>
           <button className="nav-button_h" onClick={handleContactButtonClick}>CONTACT</button>
           <div className="social-icons-project">

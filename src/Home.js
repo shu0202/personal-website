@@ -97,7 +97,7 @@ function Home() {
               height="50"
               viewBox="0 0 24 24"
               style={{
-                fill: isHovered ? 'rgb(107, 107, 107)' : 'rgb(1, 0, 82)',
+                fill: 'rgb(1, 0, 82)',
                 transition: 'fill 0.3s ease',
               }}
             >
