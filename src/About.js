@@ -30,6 +30,7 @@ const About= () => {
             <div className='title-container'>
                 <h1 className="about-title">ABOUT</h1>
             </div>
+            <div className="divider-contact"></div>
             <div className='about-container'>
                 <MotionAnimate
                 reset={true}

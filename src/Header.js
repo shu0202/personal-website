@@ -89,7 +89,10 @@ const Header = () => {
   const isHome = location.pathname === '/';
 
   return (
-    <header className="header" style={{ opacity: headerOpacity }}>
+    <header className="header" style={{
+      opacity: headerOpacity,
+      display: headerOpacity === 0 ? 'none' : 'block'
+    }}>
       {!isHome && (
         <div className="header-gradient"></div>
       )}
@@ -111,7 +114,10 @@ const Header = () => {
       )}
 
       {isHome && (
-        <div className="social-icons-main" style={{ opacity: socialIconsOpacity }}>
+        <div className="social-icons-main" style={{
+          opacity: socialIconsOpacity,
+          display: socialIconsOpacity === 0 ? 'none' : 'block'
+        }}>
           <a className='main-icon-1' href="https://www.linkedin.com/in/yan-chun-yeung-a0803320b/" target="_blank" rel="noopener noreferrer">
             <img src={linkedinBlack} alt="LinkedIn" className="social-icon1-main social-icon1-main-black" />
             <img src={linkedinGrey} alt="LinkedIn" className="social-icon1-main social-icon1-main-grey" />
