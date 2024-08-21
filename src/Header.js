@@ -29,6 +29,10 @@ const Header = () => {
     navigate('/about');
   };
 
+  const handleContactButtonClick = () => {
+    navigate('/contact');
+  };
+
   const handleScroll = () => {
     const scrolled = window.scrollY;
     const maxScroll = 200; // Adjust this value as needed
@@ -102,7 +106,7 @@ const Header = () => {
           <button className="nav-button_v" onClick={handleAboutButtonClick}>ABOUT</button>
           <button className="nav-button_v">EXPERIENCE</button>
           <button className="nav-button_v" onClick={handleProjectButtonClick}>PROJECTS</button>
-          <button className="nav-button_v">CONTACT</button>
+          <button className="nav-button_v" onClick={handleContactButtonClick}>CONTACT</button>
         </nav>
       )}
 
@@ -124,7 +128,7 @@ const Header = () => {
           <button className="nav-button_h" onClick={handleAboutButtonClick}>ABOUT</button>
           <button className="nav-button_h">EXPERIENCE</button>
           <button className="nav-button_h" onClick={handleProjectButtonClick}>PROJECTS</button>
-          <button className="nav-button_h">CONTACT</button>
+          <button className="nav-button_h" onClick={handleContactButtonClick}>CONTACT</button>
           <div className="social-icons-project">
             <a className ='project-icon-1' href="https://www.linkedin.com/in/yan-chun-yeung-a0803320b/" target="_blank" rel="noopener noreferrer">
               <img src={linkedinWhite} alt="LinkedIn" className="social-icon1-project social-icon1-project-white" />

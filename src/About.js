@@ -38,10 +38,10 @@ const About= () => {
                     show: { opacity: 1, x:0 }}}
                 speed={0.7}>
                     <div>
-                        <p className='about-paragraph'>I am a master of computer science student at the University of Bath.</p>
+                        <p className='about-paragraph'>I am a MSc computer science student at the University of Bath.</p>
                         <p className='about-paragraph'>Coding is my passion and I am capabale of writing softwares in C, C++, Java, Python, JavaScript and more.</p>
                         <p className='about-paragraph'>Language is my strength and I am fluent in English, Chinese, Japanese and Cantonese.</p>
-                        <p className='about-paragraph'>Outside of career and work, I enjoy playing basketball and the guitar</p>
+                        <p className='about-paragraph'>Outside of career and work, I enjoy playing basketball and the guitar.</p>
                     </div>
                 </MotionAnimate>
                 <div className="divider"></div>

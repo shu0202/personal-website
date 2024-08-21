@@ -9,12 +9,21 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
     const navigate = useNavigate();
-  const location = useLocation();
+    const location = useLocation();
+
+    const handleContactButtonClick = () => {
+        navigate('/contact');
+    };
+
+    const handleIconClick = () => {
+        navigate('/');
+    };
+
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className='logo'>
-            <a className='logo' href="https://www.linkedin.com/in/yan-chun-yeung-a0803320b/" target="_blank" rel="noopener noreferrer">
+            <a className='logo' onClick={handleIconClick}>
                 <img src={logoBlack} alt="LinkedIn" className="logo logo-black" />
             </a>
         </div>
@@ -34,7 +43,7 @@ const Footer = () => {
                     <a className='small-title'>Links</a>
                 </div>
                 <div className="small-words">
-                    <button className="footer-button">Contact</button>
+                    <button onClick={handleContactButtonClick}className="footer-button">Contact</button>
                     <a className='footer-seperate'>|</a>
                     <button onClick={() => window.open("https://github.com/shu0202/personal-website", '_blank')} className="footer-button">Code</button>
                 </div>

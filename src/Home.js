@@ -32,6 +32,10 @@ function Home() {
       navigate('/project');
     };
 
+    const handleAboutButtonClick = () => {
+      navigate('/about');
+    };
+
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const startScroll = 1000;
@@ -121,6 +125,7 @@ function Home() {
               <button className='more-button'
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onClick={handleAboutButtonClick}
               >
                 <span style={{ display: 'flex', alignItems: 'center' }}>
                   <p className='more-button-text'>more</p>

@@ -33,7 +33,7 @@
   
 .about-title {
     font-size: 500%;
-    font-family: 'PPTelegrafRegular', sans-serif;
+    font-family: 'PPTelegrafLight', sans-serif;
     color: rgb(1, 0, 82);
     margin-top: 7%;
 }
@@ -42,7 +42,7 @@
     width: 37%;
     margin-left: 20%;
     margin-top: 1%;
-    margin-bottom: 30%;
+    margin-bottom: 20%;
 }
 
 .about-paragraph {

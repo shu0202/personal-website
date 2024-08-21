@@ -155,7 +155,7 @@ const Project = () => {
         </div>
       </div>
 
-      <div className="button-container">
+      <div className="button-container-project">
         <button className="nav-button" onClick={handleTopClick}>TOP</button>
         <button className="nav-button" onClick={() => setCurrentScreen('About')}>ABOUT</button>
         <button className="nav-button" onClick={() => setCurrentScreen('System')}>SYSTEM</button>
