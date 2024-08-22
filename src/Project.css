@@ -26,6 +26,7 @@
 
 .project {
   overflow-x: hidden; /* Prevent horizontal scroll */
+
 }
 
 .banner {
@@ -168,14 +169,16 @@
 }
 
 .project-description-container {
-  width: 30%;
-  justify-content: flex-start;
-  margin-left: 17%;
+  width: 100%;
+  margin-bottom: 10%;
 }
+
 .project-description {
   font-size: 190%;
   font-family: 'PPTelegrafLight', sans-serif;
   color: rgb(1, 0, 82);
+  width: 30%;
+  margin-left: 17%;
 }
 
 .screen-name-container {
@@ -197,16 +200,19 @@
 }
 
 .language-tech-container {
-  margin-left: 150%;
   width: 100%;
+  margin-left: 52%;
 }
 
 .language-list {
+  margin-top: -2%;
   font-size: 190%;
+  position: absolute;
   font-family: 'PPTelegrafLight', sans-serif;
   color: rgb(1, 0, 82);
   list-style-type: none;
   align-items: flex-end;
+
 }
 
 .language-item::before {
@@ -252,4 +258,47 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+}
+
+.description-title {
+  font-size: 200%;
+  font-family: 'PPTelegrafLight', sans-serif;
+  margin-left: 17%;
+  color: rgb(1, 0, 82);
+}
+
+/*new*/
+.feature-container {
+  width: 100%;
+  margin-left: 52%;
+}
+
+.feature-list {
+  margin-top: 15%;
+  font-size: 190%;
+  position: absolute;
+  font-family: 'PPTelegrafLight', sans-serif;
+  color: rgb(1, 0, 82);
+  list-style-type: none;
+  align-items: flex-end;
+
+}
+
+.feature-list-title {
+  font-size: 105%;
+}
+
+.feature-item::before {
+  content: "- "; /* Add hyphen before each list item */
+}
+
+.video-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.system-description-title {
+  font-family: 'PPTelegrafRegular', sans-serif;
+  color: rgb(1, 0, 82);
+  font-size: 200%;
 }

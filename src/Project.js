@@ -3,6 +3,7 @@ import './Project.css';
 import Header from './Header';
 import Footer from './Footer';
 import projectsData from './projects.json'; // Import the JSON file
+import YouTube, { YouTubeProps } from 'react-youtube';
 
 import { MotionAnimate } from 'react-motion-animate';
 
@@ -92,6 +93,20 @@ const Project = () => {
   };
 
   const showExtraButtons = currentProject.title === 'title_meteror.png' || currentProject.title === 'title_chihang.png';
+
+  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  };
+
+  const opts: YouTubeProps['opts'] = {
+    height: '530',
+    width: '100%',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+    },
+  };
+
 
   return (
     <div className="project">
@@ -185,14 +200,12 @@ const Project = () => {
           </div>
         </div>
         {currentScreen === 'About' && (
+          
           <div className='project-description-container'>
             <MotionAnimate reset={true}>
-              <p className="project-description">{currentProject.description}</p>
-            </MotionAnimate>
-            <MotionAnimate animation='scrollPosition' xPos={[1000, 0]} scrollPositions={[0.4, 0.6]}>
               <div className="language-tech-container">
                 <ul className="language-list">
-                  <p className='language-list-title'>Languages & Technology</p>
+                  <p className='language-list-title'><strong>Languages & Technology:</strong></p>
                   {currentProject.language.map((lang, index) => (
                     <li key={index} className="language-item">
                       {lang}
@@ -200,12 +213,33 @@ const Project = () => {
                   ))}
                 </ul>
               </div>
+
+              <div className="feature-container">
+                <ul className="feature-list">
+                  <p className='feature-list-title'><strong>Features:</strong></p>
+                  {currentProject.features.map((feature, index) => (
+                    <li key={index} className="feature-item">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            
+              <p className="description-title"><strong>Description:</strong></p>
+              <p
+                className="project-description"
+                dangerouslySetInnerHTML={{ __html: currentProject.description }}
+              />
             </MotionAnimate>
           </div>
         )}
         {currentScreen === 'System' && (
           <div className='project-system-container'>
+            <div className="video-container">
+              <YouTube videoId={currentProject.video} opts={opts} onReady={onPlayerReady} />
+            </div>
             <MotionAnimate reset={true}>
+              <p className='system-description-title'>Description:</p>
               <p className="project-system">{currentProject.system}</p>
             </MotionAnimate>
             <div className='project-system-link-container'>
