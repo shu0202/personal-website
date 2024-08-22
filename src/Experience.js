@@ -267,7 +267,7 @@ const Experience = () => {
                     }}
                     speed={0.7}>
                     <a className='experience-content'>
-                        Participated in The Hack South West, the largest hackathon in the South West region, and was awarded the 2nd runner-up position.
+                        Participated in The Hack South West, the largest hackathon in the South West region, and was awarded the 1st runner-up position.
                     </a>
                 </MotionAnimate>
                 <MotionAnimate animation='scrollFadeIn' scrollPositions={[0.3, 0.4]}>

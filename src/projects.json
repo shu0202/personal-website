@@ -38,6 +38,17 @@
       "video": ""
     },
     {
+      "image": "banner_pool.png",
+      "title": "title_pool.png",
+      "description": "\"<strong>Pool</strong>\" is a money pooling app that aims to provide a new way of financing among family and friends. It is developed as the product of the <strong>hackathon - Hack South West</strong> and has successfully attained the <strong>1st runner up</strong> for the best product developed. It utilises the principle of money pooling whcih allow users to invest in \"pools\" and attain interest based on the performance of the particular pool. It also allows users to put their money in friendly pool to share money within family and friends.",
+      "codeLink": "https://github.com/shu0202/Pool",
+      "language": ["JavaScript", "React Native","CSS","Firebase"],
+      "features":["Investment pool","Friendly pool","Account and login system", "Easy to use UI"],
+      "system": "Pool uses JavaScript (ES6+) as its primary programming language, along with the React and React-Native frameworks, and the Expo development platform. Additionally, the team relies on Node.js for server-side functionality and Git for version control and collaboration.",
+      "system-link": {"React-Native":"https://reactnative.dev/"},
+      "video": "VJa4_xRdSYE"
+    },
+    {
       "image": "banner_chihang.png",
       "title": "title_chihang.png",
       "description": "Chihang is a game development project using Unity and C#.",
